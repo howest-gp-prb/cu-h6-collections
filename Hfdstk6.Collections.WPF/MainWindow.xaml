@@ -1,0 +1,20 @@
+﻿<Window x:Class="Hfdstk6.Collections.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hfdstk6.Collections.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnKaaprenVaarders" Content="Kaapren Vaarders" HorizontalAlignment="Left" Height="41" Margin="22,22,0,0" VerticalAlignment="Top" Width="158" Click="btnKaaprenVaarders_Click"/>
+        <ListBox x:Name="lstVaarders" HorizontalAlignment="Left" Height="186" Margin="22,80,0,0" VerticalAlignment="Top" Width="158" SelectionChanged="lstVaarders_SelectionChanged"/>
+        <Label x:Name="lblPositie" Content="-" HorizontalAlignment="Left" Height="28" Margin="22,283,0,0" VerticalAlignment="Top" Width="331"/>
+        <Button x:Name="btnVrienden" Content="Vrienden" HorizontalAlignment="Left" Height="41" Margin="239,22,0,0" VerticalAlignment="Top" Width="145" Click="btnVrienden_Click"/>
+        <Label x:Name="lblVrienden" Content="-" HorizontalAlignment="Left" Height="117" Margin="239,80,0,0" VerticalAlignment="Top" Width="232"/>
+        <Button x:Name="btnLanden" Content="Landen" HorizontalAlignment="Left" Margin="597,22,0,0" VerticalAlignment="Top" Height="41" Width="167" Click="btnLanden_Click"/>
+        <ComboBox x:Name="cmbLanden" HorizontalAlignment="Left" Height="29" Margin="597,80,0,0" VerticalAlignment="Top" Width="167" SelectionChanged="cmbLanden_SelectionChanged"/>
+        <Label x:Name="lblHoofdstad" Content="-" HorizontalAlignment="Left" Height="35" Margin="597,138,0,0" VerticalAlignment="Top" Width="167"/>
+
+    </Grid>
+</Window>
