@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Hfdstk6.Collections.WPF
 {
@@ -20,82 +10,84 @@ namespace Hfdstk6.Collections.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<string> sailors;
+        Dictionary<string, string> countries;
+
         public MainWindow()
         {
             InitializeComponent();
         }
-        List<string> vaarders;
-        private void btnKaaprenVaarders_Click(object sender, RoutedEventArgs e)
+
+        private void BtnSailors_Click(object sender, RoutedEventArgs e)
         {
-            string kaaprenVaarders;
-            vaarders = new List<string>();
-            vaarders.Add("Jan");
-            vaarders.Add("Piet");
-            vaarders.Add("Joris");
-            vaarders.Add("Korneel");
+            string sailorText;
+            sailors = new List<string>();
+            sailors.Add("Jan");
+            sailors.Add("Piet");
+            sailors.Add("Joris");
+            sailors.Add("Korneel");
 
-            kaaprenVaarders = vaarders[0] + ", " + vaarders[1] + ", " + vaarders[2] + " en " + vaarders[3] 
+            sailorText = sailors[0] + ", " + sailors[1] + ", " + sailors[2] + " en " + sailors[3] 
                 + "\nDie hebben baarden, zij varen mee.";
-            MessageBox.Show(kaaprenVaarders, "Niet gesorteerd");
+            MessageBox.Show(sailorText, "Niet gesorteerd");
 
-            vaarders.Sort();
-            kaaprenVaarders = vaarders[0] + ", " + vaarders[1] + ", " + vaarders[2] + " en " + vaarders[3] 
+            sailors.Sort();
+            sailorText = sailors[0] + ", " + sailors[1] + ", " + sailors[2] + " en " + sailors[3] 
                 + "\nDie hebben baarden, zij varen mee.";
-            MessageBox.Show(kaaprenVaarders, "Gesorteerd");
+            MessageBox.Show(sailorText, "Gesorteerd");
 
-            lstVaarders.ItemsSource = vaarders;
+            lstSailors.ItemsSource = sailors;
         }
 
-        private void lstVaarders_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LstSailors_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            lblPositie.Content = "";
-            if(lstVaarders.SelectedIndex > -1)
-            if(lstVaarders.SelectedItem != null)
+            lblPosition.Content = "";
+            //if(lstSailors.SelectedIndex > -1)
+            if(lstSailors.SelectedItem != null)
             {
-                string zoekVaarder = (string)lstVaarders.SelectedItem;
-                int positie = vaarders.FindIndex(zoek => zoek == zoekVaarder);
-                lblPositie.Content = $"{zoekVaarder} gevonden op positie {positie}";
+                string selectedSailor = (string)lstSailors.SelectedItem;
+                int position = sailors.IndexOf(selectedSailor);
+                lblPosition.Content = $"{selectedSailor} gevonden op positie {position}";
             }
         }
 
-        private void btnVrienden_Click(object sender, RoutedEventArgs e)
+        private void BtnFriends_Click(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, int> vrienden = new Dictionary<string, int>();
+            Dictionary<string, int> friends = new Dictionary<string, int>();
 
-            vrienden.Add("Emmanuel", 40);
-            vrienden.Add("Angela", 42);
-            vrienden.Add("Donald", 25);
+            friends.Add("Emmanuel", 40);
+            friends.Add("Angela", 42);
+            friends.Add("Donald", 25);
 
             string output = "";
-            output += "De leeftijd van Emmanuel is " + vrienden["Emmanuel"] + "\n";
-            output += "De tweede vriend(in) in de rij is " + vrienden.Keys.ElementAt(1) ;
-            lblVrienden.Content = output;
+            output += "De leeftijd van Emmanuel is " + friends["Emmanuel"] + "\n";
+            output += "De tweede vriend(in) in de rij is " + friends.Keys.ElementAt(1) ;
+            lblFriends.Content = output;
         }
 
-        Dictionary<string, string> landen;
-        private void btnLanden_Click(object sender, RoutedEventArgs e)
+        private void BtnCountries_Click(object sender, RoutedEventArgs e)
         {
-            landen = new Dictionary<string, string>();
+            countries = new Dictionary<string, string>();
 
-            landen.Add("Belgium", "Brussels");
-            landen.Add("Germany", "Berlin");
-            landen.Add("France", "Paris");
-            landen.Add("Spain", "Madrid");
-            landen.Add("Italy", "Rome");
-            landen.Add("Norway", "Oslo");
-            landen.Add("UK", "London");
-            landen.Add("Ireland", "Dublin");
+            countries.Add("Belgium", "Brussels");
+            countries.Add("Germany", "Berlin");
+            countries.Add("France", "Paris");
+            countries.Add("Spain", "Madrid");
+            countries.Add("Italy", "Rome");
+            countries.Add("Norway", "Oslo");
+            countries.Add("UK", "London");
+            countries.Add("Ireland", "Dublin");
 
-            cmbLanden.ItemsSource = landen.Keys;
+            cmbCountries.ItemsSource = countries.Keys;
         }
 
-        private void cmbLanden_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CmbCountries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            lblHoofdstad.Content = "";
-            if(cmbLanden.SelectedItem != null)
+            lblCapital.Content = "";
+            if(cmbCountries.SelectedItem != null)
             {
-                string zoekLand = (string)cmbLanden.SelectedItem;
-                lblHoofdstad.Content = landen[zoekLand];
+                string selectedCountry = (string)cmbCountries.SelectedItem;
+                lblCapital.Content = countries[selectedCountry];
             }
         }
     }

@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btnKaaprenVaarders" Content="Kaapren Vaarders" HorizontalAlignment="Left" Height="41" Margin="22,22,0,0" VerticalAlignment="Top" Width="158" Click="btnKaaprenVaarders_Click"/>
-        <ListBox x:Name="lstVaarders" HorizontalAlignment="Left" Height="186" Margin="22,80,0,0" VerticalAlignment="Top" Width="158" SelectionChanged="lstVaarders_SelectionChanged"/>
-        <Label x:Name="lblPositie" Content="-" HorizontalAlignment="Left" Height="28" Margin="22,283,0,0" VerticalAlignment="Top" Width="331"/>
-        <Button x:Name="btnVrienden" Content="Vrienden" HorizontalAlignment="Left" Height="41" Margin="239,22,0,0" VerticalAlignment="Top" Width="145" Click="btnVrienden_Click"/>
-        <Label x:Name="lblVrienden" Content="-" HorizontalAlignment="Left" Height="117" Margin="239,80,0,0" VerticalAlignment="Top" Width="232"/>
-        <Button x:Name="btnLanden" Content="Landen" HorizontalAlignment="Left" Margin="597,22,0,0" VerticalAlignment="Top" Height="41" Width="167" Click="btnLanden_Click"/>
-        <ComboBox x:Name="cmbLanden" HorizontalAlignment="Left" Height="29" Margin="597,80,0,0" VerticalAlignment="Top" Width="167" SelectionChanged="cmbLanden_SelectionChanged"/>
-        <Label x:Name="lblHoofdstad" Content="-" HorizontalAlignment="Left" Height="35" Margin="597,138,0,0" VerticalAlignment="Top" Width="167"/>
+        <Button x:Name="btnSailors" Content="Kaapren Vaarders" HorizontalAlignment="Left" Height="41" Margin="22,22,0,0" VerticalAlignment="Top" Width="158" Click="BtnSailors_Click"/>
+        <ListBox x:Name="lstSailors" HorizontalAlignment="Left" Height="186" Margin="22,80,0,0" VerticalAlignment="Top" Width="158" SelectionChanged="LstSailors_SelectionChanged"/>
+        <Label x:Name="lblPosition" Content="-" HorizontalAlignment="Left" Height="28" Margin="22,283,0,0" VerticalAlignment="Top" Width="331"/>
+        <Button x:Name="btnFriends" Content="Vrienden" HorizontalAlignment="Left" Height="41" Margin="239,22,0,0" VerticalAlignment="Top" Width="145" Click="BtnFriends_Click"/>
+        <Label x:Name="lblFriends" Content="-" HorizontalAlignment="Left" Height="117" Margin="239,80,0,0" VerticalAlignment="Top" Width="232"/>
+        <Button x:Name="btnCountries" Content="Landen" HorizontalAlignment="Left" Margin="597,22,0,0" VerticalAlignment="Top" Height="41" Width="167" Click="BtnCountries_Click"/>
+        <ComboBox x:Name="cmbCountries" HorizontalAlignment="Left" Height="29" Margin="597,80,0,0" VerticalAlignment="Top" Width="167" SelectionChanged="CmbCountries_SelectionChanged"/>
+        <Label x:Name="lblCapital" Content="-" HorizontalAlignment="Left" Height="35" Margin="597,138,0,0" VerticalAlignment="Top" Width="167"/>
 
     </Grid>
 </Window>
